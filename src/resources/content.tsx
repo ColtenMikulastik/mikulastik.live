@@ -2,18 +2,18 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Colten",
+  lastName: "Mikulastik",
+  name: `Colten Mikulastik`,
+  role: "Cyber Security Freelancer and Computer Science Student",
+  avatar: "/images/new.jpg",
+  email: "mikulastikc@gmail.com",
+  location: "America/Chicago", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: [], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -25,25 +25,7 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://github.com/ColtenMikulastik",
     essential: true,
   },
   {
@@ -60,7 +42,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Creating, learning, and helping others</>,
   featured: {
     display: true,
     title: (
@@ -75,9 +57,9 @@ const home: Home = {
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
-    <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+    <> </>
+    //   I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    // </>
   ),
 };
 
@@ -94,7 +76,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false, // TODO: Come back and do this!
     link: "https://cal.com",
   },
   intro: {
@@ -102,9 +84,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I am a Computer Science and Cyber Security Student/Professional who loves creating and learning.
       </>
     ),
   },
@@ -113,41 +93,37 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Cyber Defense Center",
+        timeframe: "2024 - Present",
+        role: "Freelancer, Volunteer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+            Worked on and mentored different agile teams on forensics, networking, security operations and communication projects.
+          </>
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          // TODO: Add Cyber Defense Center Logo
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Black Swan Cyber Security",
+        timeframe: "2024 - 2025",
+        role: "Cyber Security Analyst",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Worked in a Security Operations Center,
+            analyzing data from multiple different organizations to determine malicious activity.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Communicating risk and security principles in a professional environment to different clients,
+            tailoring security recommendations based on client's risk appetite.
           </>,
         ],
         images: [],
@@ -156,20 +132,20 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Studies", // TODO add information about degrees
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "North Central Texas College",
+        description: <>Studied Computer Science, and Cyber Security.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "University of North Texas",
+        description: <>Studied Computer Science, and Cyber Secuirty.</>,
       },
     ],
   },
-  technical: {
-    display: true, // set to false to hide this section
+  technical: { // TODO: add stuff here, maybe just link to linkedin tbh
+    display: false, // set to false to hide this section
     title: "Technical skills",
     skills: [
       {
@@ -235,13 +211,14 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about everything I love: (Computers, Logic, Music, Math, etc)",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work: Work = {
+  // TODO: maybe rename this to something less "work"
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
@@ -251,6 +228,7 @@ const work: Work = {
 };
 
 const gallery: Gallery = {
+  // TODO: probably remove this, its not really something I do...
   path: "/gallery",
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
