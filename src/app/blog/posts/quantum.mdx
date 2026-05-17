@@ -1,0 +1,86 @@
+---
+title: "Whitepaper: The State of Encryption and Quantum Computing"
+summary: "In the year 2024 what does the threat of quantum computing mean to cryptography"
+publishedAt: "2026-05-16"
+tag: "Quantum Computing, Algorithms, Cyber Security"
+---
+
+#### Preface:
+> [!WARNING]
+> This is a long one.
+
+The following is an essay that I wrote for my "Writing in the Sciences" class I took at UNT.
+This is one of my favorite projects/essays/whitepaper that I got to work on. 
+Due in large part to the support of my professors:
+    - Dr. Julie Germain (CSCE PhD Student with focus in the area of Quantum Computing)
+    - Dr. Samantha Cosgrove (Assistant Professor Technical Communication)
+
+# The State of Encryption and Quantum Computing Essay
+
+## Introduction
+In our current world, we utilize the internet for almost everything. From booking flights to buying groceries or renewing driver's licenses, the internet allows for quick, simple, and safe information transfer for the user. However, almost everything you do on the internet enjoys assumed security from anyone else being able to see what information you willingly send across the internet. As previously stated in your normal everyday traffic, this could include all different types of data that you may not want anyone to know. This information could include your credit card information, your current location, travel data, search history, user account information, Social Security Number, or employment information.   
+
+With current “classical” computers, this security and confidentiality is correctly assumed. This is due to the design of the internet which utilizes encryption to ensure privacy when transmitting information over the internet, among other things. This encryption can be thought of as a lock and key, in which if you wanted to give someone a secret message, you could use a briefcase that locks information inside and only the person with the key would be able to unlock the briefcase and read the message. In this example, the cryptographic system described is quite simple, and in the real world, analogous systems would be far more complex.   
+
+In the above example, we can think of a possible algorithm, or steps, to “break” this encryption by taking a huge key ring with all the possible different keys in the world attached and attempting to use each different key to unlock the briefcase one by one. This would take a very long time and would be impractical, and this is similar for classical computers when attempting to guess a key, but this is not true for quantum computers. A quantum computer is a special type of computer that uses probability to allow fast calculations for certain algorithms. The algorithm described and some other cryptographic systems are perfect for these algorithms as they have the ability to make many possible attempts at the possible key at once. This means with a quantum computer you could “break” this cryptographic system, in a fraction of the time.  
+
+This describes a very real issue for current cryptographic standards, in which if a large enough quantum computer, or if other advancements in quantum computing were realized, this sensitive data would no longer be private. However, cryptographic systems that would be resilient are currently being developed and implemented. These systems are called “post-quantum” encryption standards, and further research and implementation are needed to secure all the important data that is transmitted over the internet every day. 
+
+## Modern Cryptographic Standards
+Cryptographic standards have likely existed before we have evidence of them. An early example is the idea of a Caesar cipher or Linear cipher, in which letters in the alphabet are shifted a certain number of characters to the right (Luciano & Prichett, 1987). This creates a system in which one can encode a given message in “plaintext” and then shift all the character’s values in the message a specific number of times to create a “cyphertext” or a message that is illegible to all that don’t know its tricks (Luciano & Prichett, 1987). Then when the recipient wishes to read the message all they need to do is shift the letters back the known number of times from the cyphertext to generate the original message. This is trivial for a computer to break; some of the first computers were even designed for the purpose of breaking cryptosystems like this (Raikar, 2024). Now we use more complex systems that are much more difficult and complex which becomes less and less practical to break with current computers.  
+
+One encryption standard that was designed in 1983 by three inventors Ronald L. Rivest, Adi Shamir, and Leonard M. Adleman, is called the RSA cryptosystem (Ronald, Adi, Leonard, 1983). This process utilizes some interesting math, and properties of numbers to create keys for encryption and decryption. By taking two arbitrary large prime numbers (numbers only divisible by one and themselves) and multiplying them together, we can get a large number that is very difficult to turn back into these two prime factors (Ronald, Adi, Leonard, 1983). This can be seen in the equation (have a figure here). The process of finding q, or p from a known N, given the number is large enough, would take far too long for a modern computer to calculate. This is why this cryptographic system is so important and used in so many systems to ensure that messages are readable only to the recipient. However, if we could create a device that could break these cryptographic systems and those like it in a reasonable time, then all encrypted data would no longer be safe. 
+ 
+## Breaking Encryption with Quantum Computing
+Quantum computers are a type of computer that uses special quantum bits instead of normal bits. These quantum bits or “qubits” function as a normal bit meaning that they have a value of 1 or 0 and given enough of them can be used to represent different data (Feynman, 1985). However, the quantum part of the qubits comes from their ability to exist in a probability between these two states (1 and 0) and collapse into one specific state when “observed” or measured for a calculation (Feynman, 1985). This allows computer scientists to represent more complex algorithms that might not be feasible on a normal computer.   
+
+It might seem confusing as to the application of these computers from this description, and this is because quantum computers should not be thought of as a replacement for current computers. These quantum computers and their abilities are very effective when solving specific problems. For example, when attempting to solve the problem of finding the fastest route between the entrance and end of a maze. In the article “W-State as an OHE Scheme for Efficient Path Selection on Quantum Random Walks”, the author J. Germain explains how quantum computing allows for optimization of the current random walk algorithm for solving a graph. This graph can be thought of as a representation of the many different branching paths of a maze, and how a quantum random walk algorithm could search all possible walks at once (J. Germain, 2023). This can be visualized in Figure 1 of a hypercube, which could represent an abstraction of a very simple maze (J. Germain, 2023). 
+
+In August 2002 P.W. Shor published his paper about a quantum algorithm he created to find prime factors of numbers (Shor, 1994). As well as this, Shor explains the issue with thinking about quantum computers as having a flat increase in efficiency over modern computers (Shor, 1994). In Shor’s algorithm, he utilizes math tricks like the Fourier transform to calculate periods of two prime numbers that multiply to equal a given product (Shore, 1994). Not only does he show how a quantum computer could break the RSA cryptographic standard but also gives a schema to find discrete logs with quantum computers, which are fundamental in another important cryptosystem, Elliptic Curve Cryptography or ECC (Shor, 1994).  
+
+TODO:missing image of Hypercube graph
+![image of Hyptercube graph]()
+*Figure 1: Hypercube graph, representing the paths of possible walks through a maze, and how a quantum computer would find a path through the maze (J. Germain, 2023)*
+
+This would have disastrous consequences and would remove the ability of many programs that utilize these cryptographic tools to allow for data privacy. As Manish Kumar explains in his article “Post-quantum cryptography Algorithm's standardization and performance analysis” he states that “Cryptography is one of the most important pillars of cybersecurity” and explains the impact that quantum computing will have upon it (Kumar, 2022). Mannish Kumar also explains how this would effectively remove the ability to “...provide secure internet browsing, digital signature for authentication and validation, electronic money transactions, secure data storage, etc.” (Kumar, 2022). This means that a person’s web traffic would become almost public knowledge, as anyone with a quantum computer and enough time could see anything a given person does on the internet.  
+
+Some professionals believe it’s already too late for the idea of data privacy. Kevin Townsend, an author at the cyber security news feed “Security Week” stated in one of his articles about the concept of “Harvest now Decrypt Later” (Townsend, 2022). The idea is simple, although there might not be a quantum computer today, people could be harvesting data now to decrypt with a quantum computer later (Townsend, 2022). This could mean that although it hasn’t happened yet, the day that quantum computers have the capability to break cryptographic standards, it could decrypt any data a hacker could have stored before then. All data between whatever day an attacker started saving data to decrypt and the day quantum computers can break encryption standards is effectively exposed.  
+
+In Shor’s paper, he also has some “note[s] on practicality” where he explains possible issues the algorithm might face when tackling real-world problems (Shor, 1994). As Shor states in his article, the chief issue in scaling this algorithm will be the level of precession, or number of qubits, needed for large numbers like that used in RSA (Shor, 1994). Shor also gives some possible ways around this issue of lack of qubits, with acceptable probable errors (Shor, 1994). This means that possibly improving the number of qubits, better algorithms or better error checking might be sufficient for a quantum computer to break our current cryptographic systems. 
+
+## Post-Quantum Cryptography: 
+As previously covered, current encryption standards utilize properties of math to create private messages, which unfortunately quantum computers are very capable of breaking. The concept of “post-quantum encryption” utilizes different math properties specifically targeting a quantum computer’s faults. In the article “Post Quantum Cryptography: A Review of Techniques, Challenges and Standardizations”, R. Bavdekar, E. Jayant Chopde, A. Agrawal, A. Bhatia, and K. Tiwari, display several different new applications of math concepts that are being applied in encryption (R. Bavdekar, et al. 2023). The paper outlines some of these “underlying problems” in which cryptosystems are created.   
+
+However, not all these new types of post-quantum cryptography are created equal. In NIST’s (US Dept. National Institute of Standards and Technology), “Status Report on the Second Round of the NIST Post-Quantum Cryptography Standardization Process” Dustin Moody, et al., write their findings after exhaustively searching for a new quantum-safe cryptosystem to be standardized (Dustin Moody, et al.  2020). After listing and analyzing twenty-six different systems created by other researchers, four systems: “Classic McEliece, CRYSTALS-KYBER, NTRU, and SABER” were chosen as finalists for public-key encryption standards (Dustin Moody, et al. 2020). This means that these new post-quantum encryption standards could be replacements for RSA and discrete log cryptosystems described above, which are quantum-vulnerable public-key cryptosystems.  
+
+It is also notable that three of the four finalists for NIST’s post-quantum cryptography standards competition utilize a “structured lattice scheme” (Dustin Moody, et al. 2020). It was also stated in the NISTS status report paper that “structured lattice schemes appear to be the most promising general-purpose algorithms for public-key encryption...” (Dustin Moody, et al. 2020). As well as this, in NIST’s “Announcing Issuance of Federal Information Processing Standards ...” published in 2024, the CRYSTALS-KYBER standard, one of the lattice-based post-quantum cryptographic standards was selected as a standard as a federal information processing standard. Figure 2 outlines the algorithm for the CRYSTALS-KYBER cryptosystem, described in the article “Side-channel and Fault-injection attacks over Lattice-based Post-quantum Schemes (Kyber, Dilithium): Survey and New Results” written by Prasanna Ravi, et al. This would seem to point towards this new structured lattice scheme branch of post-quantum computing to be the most likely contender for new cryptographic standards in the future. 
+
+TODO: add image of pseudocode for CRYSTALS KYBER
+![pseudocode for CRYSTALS KYBER]()
+*Figure 2: Description of CRYSTALS KYBER, a lattice schemed crypto system.*
+
+## Conclusion: 
+One day a quantum computer powerful and large enough to break our current cryptographic standards will be made. When it is, it will be used to first break through all current data that is thought to be private and secure today through to the day we decide to enforce post-quantum cryptography. The amount of data an entity would be able to decrypt could be up to decades worth of data or just a couple of months and is determined by how soon we act. No matter who then controls this data, whether it be a nation-state or a single person will have removed the right to privacy for every country, organization, and person. Ultimately, we must act as soon as we can to implement these cutting-edge security standards that were created for this important problem. 
+
+## References: 
+Luciano, D., & Prichett, G. (1987). Cryptology: From Caesar Ciphers to Public-Key Cryptosystems. The College Mathematics Journal, 18(1), 2–17. https://doi.org/10.2307/2686311 
+
+Raikar, S.P. (2023, March 7). Bombe. Encyclopedia Britannica. https://www.britannica.com/topic/Bombe 
+
+Ronald L. Rivest, Adi Shamir, Leonard M. Adleman. (1983) Cryptographic communication system and method (U.S. Patent No. US4405829A) U.S. Patent and Trademark Office. https://patents.google.com/patent/US4405829 
+
+Richard P. Feynman (1985) Quantum Mechanical Computers. Optics News https://www.optica-opn.org/home/articles/on/volume_11/issue_2/features/quantum_mechanical_computers/ 
+
+P. W. Shor, (1994) "Algorithms for quantum computation: discrete logarithms and factoring," Proceedings 35th Annual Symposium on Foundations of Computer Science, pp. 124-134, doi: 10.1109/SFCS.1994.365700. https://ieeexplore.ieee.org/document/365700/authors#authors 
+
+Manish Kumar, (2022) Post-quantum cryptography Algorithm's standardization and performance analysis, Array, Volume 15, ISSN 2590-0056, https://doi.org/10.1016/j.array.2022.100242. (https://www.sciencedirect.com/science/article/pii/S2590005622000777) 
+
+Kevin Townsend, (2022) Solving the Quantum Decryption ‘Harvest Now, Decrypt Later’ Problem, Data Protection, https://www.securityweek.com/solving-quantum-decryption-harvest-now-decrypt-later-problem/ 
+
+Moody, D. , Alagic, G. , Apon, D. , Cooper, D. , Dang, Q. , Kelsey, J. , Liu, Y. , Miller, C. , Peralta, R. , Perlner, R. , Robinson, A. , Smith-Tone, D. and Alperin-Sheriff, J. (2020), Status Report on the Second Round of the NIST Post-Quantum Cryptography Standardization Process, NIST Interagency/Internal Report (NISTIR), National Institute of Standards and Technology, Gaithersburg, MD, [online], https://doi.org/10.6028/NIST.IR.8309 (Accessed April 4, 2025) 
+
+“Announcing Issuance of Federal Information Processing Standards (FIPS) FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard, FIPS 204, Module-Lattice-Based Digital Signature Standard, and FIPS 205, Stateless Hash-Based Digital Signature Standard”, Department of Commerce, National Institute of Standards and Technology, Docket No. 240719-0201, RIN 0693-XC13, https://www.federalregister.gov/d/2024-17956 
+
+J. Germain and R. Dantu, "W-State as a OHE Scheme for Efficient Path Selection on Quantum Random Walks," IEEE INFOCOM 2023 - IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS), Hoboken, NJ, USA, 2023, pp. 1-6, doi: 10.1109/INFOCOMWKSHPS57453.2023.10226051 
+
+Prasanna Ravi, Anupam Chattopadhyay, Jan Pieter D’Anvers, and Anubhab Baksi. 2024. Side-channel and Fault-injection attacks over Lattice-based Post-quantum Schemes (Kyber, Dilithium): Survey and New Results. ACM Trans. Embed. Comput. Syst. 23, 2, Article 35 (March 2024), 54 pages. https://doi-org.libproxy.library.unt.edu/10.1145/3603170 
